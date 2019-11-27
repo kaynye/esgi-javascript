@@ -68,11 +68,3 @@ function leet(str){
 // console.log(leet("lala"))
 
 
-// prairie={}
-// prairie["animal"]={}
-// prairie["animal"]["type"]={}
-// prairie["animal"]["type"]["name"]="Chien"
-// function prop_access(object,path){
-//     var path=path.split
-// }
-
