@@ -78,9 +78,25 @@ function prop_access(object,path){
     var listepath=path.split(".")
     monPath=""
     for (elem in listepath){
-        if (prairie[elem]){
-
+        if (prairie[elem]!= undefined){
+            
         }
     }
     return true
 }
+
+function verlan(str){
+    if (typeof(str) !=="string" || str.length===0)  return "";
+    return str.split(" ").map(mot => mot.split("").reverse().join("")).join(" ")
+}
+
+function yoda(str){
+    if (typeof(str) !=="string" || str.length===0)  return "";
+    return str.split(" ").reverse().join(" ")
+}
+
+console.log(verlan("Hello world"))
+
+
+console.log(yoda("Hello world"))
+
