@@ -2,12 +2,12 @@
      if (typeof(str) !=="string" || str.length===0)  return "";
      return str[0].toUpperCase()+str.substring(1);
  }
- console.log(ucfirst("test"));
- console.log(ucfirst("Test"));
- console.log(ucfirst("3est"));
- console.log(ucfirst("rest ref"));
- console.log(ucfirst(null));
- console.log(ucfirst({}));
+//  console.log(ucfirst("test"));
+//  console.log(ucfirst("Test"));
+//  console.log(ucfirst("3est"));
+//  console.log(ucfirst("rest ref"));
+//  console.log(ucfirst(null));
+//  console.log(ucfirst({}));
 
  function capitalize(str){
     if (typeof(str) !=="string" || str.length===0)  return "";
