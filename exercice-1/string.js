@@ -77,18 +77,22 @@ prairie["animal"]["type"]={}
 prairie["animal"]["type"]["name"]="dog" 
 //console.log(prairie["animal"])
 function prop_access(object,path){
+    if (typeof(path) !=="string" || path.length===0)  return object;
     let listepath=path.split(".")
-    motPath=""
+    momPath=""
     for (let elem of listepath){
+        momPath+=elem
         if (typeof object[elem] === "undefined") {
-            return motPath.slice(1) + " not exist"
+            return momPath.slice(elem) + " not exist"
         }
+        
         object = object[elem];
+        momPath+="."
     }
     return object
 }
 
-console.log(prop_access(prairie,"animal.type.name"))
+console.log(prop_access(prairie,"test"))
 
 
 function verlan(str){
