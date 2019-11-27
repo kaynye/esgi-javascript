@@ -48,7 +48,7 @@
 }
 
 // console.log("snake_case");
-console.log(snake_case(null));
+// console.log(snake_case(null));
 
 
 function leet(str){
@@ -60,10 +60,11 @@ function leet(str){
                 "u":"(_)",
                 "y":7}  
     for (key in dico){
-        str=str.replace(new RegExp(key, 'g'), dico[key])
+        str=str.replace(new RegExp(key, 'ig'), dico[key])
     }
     return str
 }
+
 
 
 
@@ -73,17 +74,21 @@ function leet(str){
 prairie={}
 prairie["animal"]={}
 prairie["animal"]["type"]={}
-prairie["animal"]["type"]["name"]="Chien"
+prairie["animal"]["type"]["name"]="dog" 
+//console.log(prairie["animal"])
 function prop_access(object,path){
-    var listepath=path.split(".")
-    monPath=""
-    for (elem in listepath){
-        if (prairie[elem]!= undefined){
-            
+    let listepath=path.split(".")
+    motPath=""
+    for (let elem of listepath){
+        if (typeof object[elem] === "undefined") {
+            return motPath.slice(1) + " not exist"
         }
+        object = object[elem];
     }
-    return true
+    return object
 }
+console.log(prop_access(prairie,"animal.type.name"))
+
 
 function verlan(str){
     if (typeof(str) !=="string" || str.length===0)  return "";
@@ -95,8 +100,28 @@ function yoda(str){
     return str.split(" ").reverse().join(" ")
 }
 
-console.log(verlan("Hello world"))
+// console.log(verlan("Hello world"))
 
+const vig = (message, key) => {
+    if ( typeof message !== "string" || typeof key !== "string") {
+        return undefined;
+    }
+    var result = [];
+    var letterCounter = 0;
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    alphabet = alphabet.split("");
+    var rowIndex;
+    var colIndex;
+    while (letterCounter < message.length) {
+        for (var i = 0; i < key.length; i++) {
+            rowIndex = alphabet.indexOf(key[i]);
+            colIndex = alphabet.indexOf(message[letterCounter]);
+            result.push(alphabet[(rowIndex + colIndex) % alphabet.length]);
+            letterCounter++;
+            if (letterCounter >= message.length) break;
+        }
+    }
+    return result.join("");
+};
 
-console.log(yoda("Hello world"))
 
