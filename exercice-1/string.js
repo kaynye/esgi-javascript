@@ -95,6 +95,7 @@ function prop_access(object,path){
 console.log(prop_access(prairie,"test"))
 
 
+
 function verlan(str){
     if (typeof(str) !=="string" || str.length===0)  return "";
     return str.split(" ").map(mot => mot.split("").reverse().join("")).join(" ")
