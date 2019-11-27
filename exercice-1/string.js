@@ -65,6 +65,5 @@ function leet(str){
     return str
 }
 
-// console.log(leet("lala"))
 
 
