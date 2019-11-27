@@ -34,12 +34,12 @@
     
  }
 //  console.log("camelCase")
-console.log(camelCase("ToggleCase is_the coolest"));
+// console.log(camelCase("ToggleCase is_the coolest"));
 
 
  function snake_case(str){
     if (typeof(str) !=="string" || str.length===0)  return "";
-    str=str.replace(/[^a-z0-9\s]/gi, '')
+    str=str.replace(/[^a-z0-9_\s]/gi, '')
    const array = str.toLowerCase().split(" ");
    for (let mot=0;mot<array.length;){
        array[mot]=array[mot++]
@@ -48,7 +48,7 @@ console.log(camelCase("ToggleCase is_the coolest"));
 }
 
 // console.log("snake_case");
-// console.log(snake_case("SERPENTARD /*ç_è(&:!ùHARRY"));
+console.log(snake_case(null));
 
 
 function leet(str){
@@ -67,3 +67,20 @@ function leet(str){
 
 
 
+// console.log(leet("lala"))
+
+
+prairie={}
+prairie["animal"]={}
+prairie["animal"]["type"]={}
+prairie["animal"]["type"]["name"]="Chien"
+function prop_access(object,path){
+    var listepath=path.split(".")
+    monPath=""
+    for (elem in listepath){
+        if (prairie[elem]){
+
+        }
+    }
+    return true
+}
