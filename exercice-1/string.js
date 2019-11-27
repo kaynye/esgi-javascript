@@ -87,6 +87,7 @@ function prop_access(object,path){
     }
     return object
 }
+
 console.log(prop_access(prairie,"animal.type.name"))
 
 
