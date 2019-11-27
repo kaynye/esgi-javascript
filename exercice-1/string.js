@@ -21,8 +21,10 @@
 //  console.log(capitalize("coucou malin"));
 
  function camelCase(str){
-     str=str.replace(/[^a-z0-9\s]/gi, '')
     if (typeof(str) !=="string" || str.length===0)  return "";
+    str=str.replace("_"," ")
+     str=str.replace(/[^a-z0-9\s]/gi, '')
+     
     const array = str.toLowerCase().split(" ");
     for (let mot=0;mot<array.length;){
         array[mot]=ucfirst(array[mot++])
@@ -32,7 +34,7 @@
     
  }
 //  console.log("camelCase")
-//  console.log(camelCase("SERPENTARD /*ç_è(&:!ùHARRY"));
+console.log(camelCase("ToggleCase is_the coolest"));
 
 
  function snake_case(str){
